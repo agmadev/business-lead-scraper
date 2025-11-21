@@ -1,0 +1,9 @@
+services:
+  scraper:
+    build: .
+    container_name: google-lead-scraper
+    env_file:
+      - .env
+    volumes:
+      - ./creds:/app/creds:ro
+    restart: unless-stopped
